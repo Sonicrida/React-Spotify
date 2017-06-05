@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Paper from 'material-ui/Paper';
 import api from '../utils/api.js'
 import axios from 'axios';
-import runtimeEnv from '@mars/heroku-js-runtime-env';
+//import runtimeEnv from '@mars/heroku-js-runtime-env';
 
 class App extends Component {
 
@@ -11,11 +11,11 @@ class App extends Component {
 
         const env = runtimeEnv();
 
-        var client_id = env.REACT_APP_CLIENT_ID;
-        var scope = 'user-read-private user-read-email';
-        const redirect_uri = env.REACT_APP_REDIRECT_URI;
+        const client_id = process.env.REACT_APP_CLIENT_ID;
+        const scope = 'user-read-private user-read-email';
+        const redirect_uri = process.env.REACT_APP_REDIRECT_URI;
 
-        var url='https://accounts.spotify.com/authorize';
+        let url='https://accounts.spotify.com/authorize';
         url += '?response_type=token';
         url += '&client_id=' + encodeURIComponent(client_id);
         url += '&scope=' + encodeURIComponent(scope);
@@ -25,8 +25,8 @@ class App extends Component {
     }
 
     getHashParams() {
-          var hashParams = {};
-          var e, r = /([^&;=]+)=?([^&;]*)/g,
+          let hashParams = {};
+          let e, r = /([^&;=]+)=?([^&;]*)/g,
               q = window.location.hash.substring(1);
           while ( e = r.exec(q)) {
              hashParams[e[1]] = decodeURIComponent(e[2]);
