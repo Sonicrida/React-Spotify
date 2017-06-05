@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
@@ -23,7 +24,8 @@ module.exports = {
         HtmlWebpackPluginConfig,
         new webpack.DefinePlugin({
             'process.env': {
-                NODE_ENV: JSON.stringify(nodeEnv),
+                REACT_APP_CLIENT_ID: JSON.stringify(process.env.REACT_APP_CLIENT_ID),
+                REACT_APP_REDIRECT_URI: JSON.stringify(process.env.REACT_APP_REDIRECT_URI),
             }
         })
     ]

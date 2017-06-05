@@ -9,7 +9,7 @@ class App extends Component {
 
     spotify() {
 
-        const env = runtimeEnv();
+        // const env = runtimeEnv();
 
         const client_id = process.env.REACT_APP_CLIENT_ID;
         const scope = 'user-read-private user-read-email';
