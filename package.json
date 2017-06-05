@@ -3,23 +3,19 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-
   "scripts": {
     "start": "webpack-dev-server",
     "build": "webpack -p"
   },
-
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Sonicrida/React-Spotify.git"
   },
-
   "author": "Sonicrida",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Sonicrida/React-Spotify/issues"
   },
-
   "homepage": "https://github.com/Sonicrida/React-Spotify#readme",
   "dependencies": {
     "axios": "^0.16.2",
@@ -35,6 +31,10 @@
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-router-dom": "^4.1.1",
+    "react-tap-event-plugin": "^2.0.1",
+    "redux": "^3.6.0",
+    "redux-form": "^6.7.0",
+    "redux-form-material-ui": "^4.2.0",
     "webpack": "^2.6.1",
     "webpack-dev-server": "^2.4.5"
   }
