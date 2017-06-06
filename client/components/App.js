@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Paper from 'material-ui/Paper';
 import api from '../utils/api.js'
 import axios from 'axios';
+import config from '../utils/config'
 //import runtimeEnv from '@mars/heroku-js-runtime-env';
 
 class App extends Component {
@@ -11,9 +12,11 @@ class App extends Component {
 
         // const env = runtimeEnv();
 
-        const client_id = process.env.REACT_APP_CLIENT_ID;
+        const client_id = process.env.REACT_APP_CLIENT_ID || config.REACT_APP_CLIENT_ID;
+        console.log("Log process");
+        console.log(client_id);
         const scope = 'user-read-private user-read-email';
-        const redirect_uri = process.env.REACT_APP_REDIRECT_URI;
+        const redirect_uri = process.env.REACT_APP_REDIRECT_URI || config.REACT_APP_REDIRECT_URI;
 
         let url='https://accounts.spotify.com/authorize';
         url += '?response_type=token';
