@@ -4,6 +4,11 @@ import Paper from 'material-ui/Paper';
 import api from '../utils/api.js'
 import axios from 'axios';
 import config from '../utils/config'
+import RaisedButton from 'material-ui/RaisedButton';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+import Landing from './Landing'
+
+injectTapEventPlugin();
 //import runtimeEnv from '@mars/heroku-js-runtime-env';
 
 class App extends Component {
@@ -63,12 +68,14 @@ class App extends Component {
 
         return (
             <div>
-                <Paper>
-                    <button onClick={this.spotify}>Spotify!</button>
-                    <div>
-                        {params.access_token}
-                    </div>
-                </Paper>
+                <Router>
+                    <Paper>
+                        <div>
+                            <Landing spotify={this.spotify}/>
+                        </div>
+                    </Paper>
+                </Router>
+                
             </div>
         )
     }
