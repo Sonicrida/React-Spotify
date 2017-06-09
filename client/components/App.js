@@ -6,14 +6,15 @@ import axios from 'axios';
 import config from '../utils/config'
 import RaisedButton from 'material-ui/RaisedButton';
 import injectTapEventPlugin from 'react-tap-event-plugin';
-import Landing from './Landing'
+import LandingContainer from './LandingContainer';
+import queryString from 'query-string';
 
 injectTapEventPlugin();
 //import runtimeEnv from '@mars/heroku-js-runtime-env';
 
 class App extends Component {
 
-    spotify() {
+    spotifyAuth() {
 
         // const env = runtimeEnv();
 
@@ -32,16 +33,6 @@ class App extends Component {
         window.location = url;
     }
 
-    getHashParams() {
-          let hashParams = {};
-          let e, r = /([^&;=]+)=?([^&;]*)/g,
-              q = window.location.hash.substring(1);
-          while ( e = r.exec(q)) {
-             hashParams[e[1]] = decodeURIComponent(e[2]);
-          }
-          return hashParams;
-    }
-
     getData(params) {
         axios({
             method: 'get',
@@ -51,15 +42,15 @@ class App extends Component {
             }
         })
         .then(function(response) {
-            console.log(response);
+            //console.log(response);
         });
     }
 
 
     render() {
 
-        const params = this.getHashParams();
-        console.log(params);
+        let params = queryString.parse(location.hash);
+        
         
         if(params) {
             this.getData(params);
@@ -69,11 +60,12 @@ class App extends Component {
         return (
             <div>
                 <Router>
-                    <Paper>
-                        <div>
-                            <Landing spotify={this.spotify}/>
-                        </div>
-                    </Paper>
+                    <div>
+                        <Route path='/' >
+                            <LandingContainer spotifyAuth={this.spotifyAuth}/>
+                        </Route>
+                    </div>
+                    
                 </Router>
                 
             </div>
