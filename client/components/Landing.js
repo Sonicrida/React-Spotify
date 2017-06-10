@@ -4,7 +4,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 class Landing extends Component {
 
     render() {
-        console.log(this.props);
+        //console.log(this.props);
         return (
             <div>
                <RaisedButton onTouchTap={this.props.spotifyAuth}>Spotify!</RaisedButton>

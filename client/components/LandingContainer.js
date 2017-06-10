@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { setAccessToken } from '../actions'
-import Landing from '../components/Landing'
+import { setAccessToken } from '../actions';
+import Landing from '../components/Landing';
+import SpotifyFormContainer from './SpotifyFormContainer';
 import queryString from 'query-string';
 
 class LandingContainer extends Component {
@@ -18,18 +19,19 @@ class LandingContainer extends Component {
 
     render() {
 
-        if(this.props.token) {
-            console.log(this.props);
-            console.log("Token");
-        }
+        // if(this.props.token) {
+        //     console.log(this.props);
+        //     console.log("Token");
+        // }
 
-        else {
-            console.log("no token");
-            console.log(this.props);
-        }
+        // else {
+        //     console.log("no token");
+        //     console.log(this.props);
+        // }
         return (
             <div>
                <Landing spotifyAuth={this.props.spotifyAuth}/>
+               <SpotifyFormContainer />
             </div>
         )
     }
@@ -38,7 +40,7 @@ class LandingContainer extends Component {
 const mapStateToProps = (state) => {
 
     //console.log("State");
-    console.log(state);
+    //console.log(state);
     return {
         accessToken: state.accessToken
     }

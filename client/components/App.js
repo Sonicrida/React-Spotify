@@ -19,8 +19,8 @@ class App extends Component {
         // const env = runtimeEnv();
 
         const client_id = process.env.REACT_APP_CLIENT_ID || config.REACT_APP_CLIENT_ID;
-        console.log("Log process");
-        console.log(client_id);
+        //console.log("Log process");
+        //console.log(client_id);
         const scope = 'user-read-private user-read-email';
         const redirect_uri = process.env.REACT_APP_REDIRECT_URI || config.REACT_APP_REDIRECT_URI;
 
