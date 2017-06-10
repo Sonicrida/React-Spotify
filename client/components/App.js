@@ -6,6 +6,7 @@ import axios from 'axios';
 import config from '../utils/config'
 import RaisedButton from 'material-ui/RaisedButton';
 import injectTapEventPlugin from 'react-tap-event-plugin';
+import Nav from './Nav';
 import LandingContainer from './LandingContainer';
 import queryString from 'query-string';
 
@@ -61,6 +62,7 @@ class App extends Component {
             <div>
                 <Router>
                     <div>
+                        <Nav />
                         <Route path='/' >
                             <LandingContainer spotifyAuth={this.spotifyAuth}/>
                         </Route>

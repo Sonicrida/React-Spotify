@@ -19,28 +19,23 @@ class LandingContainer extends Component {
 
     render() {
 
-        // if(this.props.token) {
-        //     console.log(this.props);
-        //     console.log("Token");
-        // }
-
-        // else {
-        //     console.log("no token");
-        //     console.log(this.props);
-        // }
+        if(this.props.accessToken) {
+            return (
+                <div>
+                    <SpotifyFormContainer />
+                </div>
+            )
+        }
+        
         return (
             <div>
                <Landing spotifyAuth={this.props.spotifyAuth}/>
-               <SpotifyFormContainer />
             </div>
         )
     }
 }
 
 const mapStateToProps = (state) => {
-
-    //console.log("State");
-    //console.log(state);
     return {
         accessToken: state.accessToken
     }

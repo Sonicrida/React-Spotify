@@ -1,4 +1,4 @@
-const accessToken = (state = {}, action) => {
+const accessToken = (state = '', action) => {
     switch (action.type) {
         case 'SET_ACCESS_TOKEN':
             return action.token;
