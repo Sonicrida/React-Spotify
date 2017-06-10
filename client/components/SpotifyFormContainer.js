@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
 import SpotifyForm from './SpotifyForm';
+import { getTracksList } from '../actions';
 
 class FormContainer extends Component {
 
@@ -12,17 +13,8 @@ class FormContainer extends Component {
   }
 
   submit(values) {
-    console.log(values);
-    axios({
-        method: 'get',
-        url: 'https://api.spotify.com/v1/search?query=' + values.searchQuery + '&type=track',
-        headers: {
-            'Authorization': 'Bearer ' + this.props.accessToken
-        }
-    })
-    .then(function(response) {
-        console.log(response);
-    });
+    // console.log(this.props.accessToken);
+    this.props.dispatch(getTracksList(values.searchQuery, this.props.accessToken));
   }
 
   render() {
@@ -33,8 +25,10 @@ class FormContainer extends Component {
 }
 
 const mapStateToProps = (state) => {
-
-    
+    console.log("Logging state");
+    console.log(state);
+    console.log(state.tracksData);
+    console.log("End state logging");
     return {
         accessToken: state.accessToken
     }
