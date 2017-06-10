@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Paper from 'material-ui/Paper';
 import api from '../utils/api.js'
 import axios from 'axios';
-import config from '../utils/config'
+//import config from '../utils/config'
 import RaisedButton from 'material-ui/RaisedButton';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import Nav from './Nav';
