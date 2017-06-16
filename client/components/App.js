@@ -9,6 +9,7 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 import Nav from './Nav';
 import LandingContainer from './LandingContainer';
 import queryString from 'query-string';
+import './App.css';
 
 injectTapEventPlugin();
 //import runtimeEnv from '@mars/heroku-js-runtime-env';
@@ -61,12 +62,12 @@ class App extends Component {
         return (
             <div>
                 <Router>
-                    <div>
+                    <Paper className="main-container">
                         <Nav />
                         <Route path='/' >
                             <LandingContainer spotifyAuth={this.spotifyAuth}/>
                         </Route>
-                    </div>
+                    </Paper>
                     
                 </Router>
                 

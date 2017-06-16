@@ -1,0 +1,10 @@
+.main-container {
+    margin: 0 auto;
+    width: 960px;
+}
+
+.search-form {
+    padding: 0 20px !important;
+    margin: 20px;
+    text-align: center;
+}
