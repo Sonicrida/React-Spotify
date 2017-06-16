@@ -4,7 +4,7 @@ import { setAccessToken } from '../actions';
 import Landing from '../components/Landing';
 import SpotifyFormContainer from './SpotifyFormContainer';
 import queryString from 'query-string';
-import config from '../utils/config'
+//import config from '../utils/config'
 
 class LandingContainer extends Component {
     constructor(props) {
