@@ -2,6 +2,7 @@ import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import RaisedButton from 'material-ui/RaisedButton';
 import Paper from 'material-ui/Paper';
+import { TextField } from 'redux-form-material-ui';
 
 let SpotifyForm = props => {
     const { handleSubmit } = props;
@@ -10,8 +11,7 @@ let SpotifyForm = props => {
             <h1>Search for a song</h1>
             <form onSubmit={ handleSubmit }>
                 <div>
-                    <label htmlFor="searchQuery">Search Songs</label>
-                    <Field name="searchQuery" component="input" type="text" />
+                    <Field name="searchQuery" component={TextField} hintText="Song Title" />
                 </div>
                 <RaisedButton secondary type="submit">Submit</RaisedButton>
             </form>

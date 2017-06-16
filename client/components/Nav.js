@@ -7,7 +7,7 @@ class Nav extends Component {
 
     render() {
         return (
-            <Toolbar >
+            <Toolbar className="nav-bar">
                 <ToolbarGroup>
                     <NavLink to='/'>
                         <RaisedButton primary={true}>Home</RaisedButton>
