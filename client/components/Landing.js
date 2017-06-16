@@ -1,17 +1,12 @@
 import React, { Component } from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
 
-class Landing extends Component {
-
-    render() {
-        //console.log(this.props);
+function Landing(props) {
         return (
-            <div>
-               <RaisedButton onTouchTap={this.props.spotifyAuth}>Spotify!</RaisedButton>
+            <div className="auth-button-container">
+               <RaisedButton onTouchTap={props.spotifyAuth}><span className="auth-button">Login to Spotify</span></RaisedButton>
             </div>
         )
-    }
-
 }
 
 export default Landing;

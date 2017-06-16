@@ -22,25 +22,35 @@ class FormContainer extends Component {
   render() {
     return (
       <div>
-        <SpotifyForm accessToken={this.props.accessToken} onSubmit={this.submit} />
 
-        <div className="tracks-list-container">
-          {this.props.tracksData.tracksData ? (
-              <List>
-                {this.props.tracksData.tracksData.tracks.items.map(function(track) {
-                  return (
-                    <Song 
-                      key={track.id}
-                      name={track.name}
-                      artists={track.artists}
-                    />
-                  )
-                })}
-              </List>
-          ) : (
-            <span>No tracks</span>
-          )}
-        </div>
+        {this.props.accessToken ? (
+            <div>
+              <SpotifyForm accessToken={this.props.accessToken} onSubmit={this.submit} />
+
+              <div className="tracks-list-container">
+                {this.props.tracksData.tracksData ? (
+                    <List>
+                      {this.props.tracksData.tracksData.tracks.items.map(function(track) {
+                        return (
+                          <Song 
+                            key={track.id}
+                            name={track.name}
+                            artists={track.artists}
+                          />
+                        )
+                      })}
+                    </List>
+                ) : (
+                  <span className="tracks-placeholder">No tracks</span>
+                )}
+              </div>
+            </div>
+        ) : (
+            <h1 className="form-header">You must be logged in to use this page!</h1>
+        )}
+
+
+        
         
       </div>
     )

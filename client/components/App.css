@@ -8,8 +8,31 @@
 
 }
 
-.nav-bar {
-    
+.nav-link {
+    margin-right: 20px;
+}
+
+.nav-button {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.landing-header {
+    text-align: center;
+}
+
+.auth-button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.auth-button {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.form-header {
+    text-align: center;
 }
 
 .search-form {
@@ -18,4 +41,10 @@
     margin-top: 20px;
     text-align: center;
     width: 50%;
+}
+
+.tracks-placeholder {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
 }
