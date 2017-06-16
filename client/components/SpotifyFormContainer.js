@@ -18,6 +18,7 @@ class FormContainer extends Component {
   }
 
   render() {
+    console.log(this.props)
     return (
       <SpotifyForm accessToken={this.props.accessToken} onSubmit={this.submit} />
     )
@@ -25,10 +26,10 @@ class FormContainer extends Component {
 }
 
 const mapStateToProps = (state) => {
-    console.log("Logging state");
-    console.log(state);
-    console.log(state.tracksData);
-    console.log("End state logging");
+    // console.log("Logging state");
+    // console.log(state);
+    // console.log(state.tracksData);
+    // console.log("End state logging");
     return {
         accessToken: state.accessToken
     }
